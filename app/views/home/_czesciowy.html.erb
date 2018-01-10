@@ -21,10 +21,21 @@ content for toggling -->
 </li>
  <li><%= link_to 'O mnie', home_about_path %>
 </li>
+   <li><%= link_to 'Lista pinów', pins_path %>
+  </li>
+   <% if user_signed_in? %>
+    <li><%= link_to 'Nowy pin', new_pin_path %>
+</li>
+   <li><%= link_to 'Edytuj profil', edit_user_registration_path %>
+</li> 
+   <li><%= link_to 'Wyloguj się', destroy_user_session_path, method: :delete %>
+</li>
+    <% else %>
    <li><%= link_to 'Logowanie', new_user_session_path %>
 </li>
    <li><%= link_to 'Rejestracja', new_user_registration_path %>
 </li>
+   <% end %>
  </ul>
  </div><!-- /.navbar-collapse -->
  </div><!-- /.container-fluid -->
